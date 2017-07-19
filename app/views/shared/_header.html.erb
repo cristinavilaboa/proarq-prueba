@@ -1,8 +1,10 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <%= link_to 'ProArq', root_path, class: 'navbar-brand' %>
-    </div>
-  </div>
-
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<%= link_to 'ProArq', root_path, class: 'navbar-brand' %>
+			<% if user_signed_in? %>
+				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+			<% end %>
+		</div>
+	</div>
 </nav>

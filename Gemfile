@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'execjs'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'devise'
+gem 'bcrypt', platforms: :ruby
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
