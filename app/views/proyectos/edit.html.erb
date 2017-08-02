@@ -1,6 +1,9 @@
 <h1>Editing Proyecto</h1>
 
 <%= render 'form', proyecto: @proyecto %>
-
+<% if !(@proyecto.portada.blank?) %>
+	<img src=<%= @proyecto.portada%>>
+	<%= button_to 'Delete Portada', deleteportada_proyecto_path(@proyecto.id), method: :post %>
+<% end %>
 <%= link_to 'Show', @proyecto %> |
 <%= link_to 'Back', proyectos_path %>

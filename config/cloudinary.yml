@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: proarq
+  api_key: '721762195951836'
+  api_secret: rgpq8ypLeppTDwbmmeZCQKYiTLE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: proarq
+  api_key: '721762195951836'
+  api_secret: rgpq8ypLeppTDwbmmeZCQKYiTLE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: proarq
+  api_key: '721762195951836'
+  api_secret: rgpq8ypLeppTDwbmmeZCQKYiTLE
+  enhance_image_tag: true
+  static_image_support: false

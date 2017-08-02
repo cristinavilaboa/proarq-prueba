@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719154111) do
+ActiveRecord::Schema.define(version: 20170719181513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fotos", force: :cascade do |t|
+    t.string "descripcion"
+    t.string "src"
+    t.string "public_id"
+    t.bigint "proyecto_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proyecto_id"], name: "index_fotos_on_proyecto_id"
+  end
 
   create_table "proyectos", force: :cascade do |t|
     t.string "titulo"
@@ -21,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170719154111) do
     t.string "ubicacion"
     t.string "descripcion"
     t.date "fecha"
+    t.string "portada"
+    t.string "portada_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,4 +54,5 @@ ActiveRecord::Schema.define(version: 20170719154111) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "fotos", "proyectos"
 end

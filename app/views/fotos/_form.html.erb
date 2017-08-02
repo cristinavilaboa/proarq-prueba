@@ -1,0 +1,27 @@
+<%= form_with(model:[@proyecto, foto], local: true, :html => {:multipart => true}) do |form| %>
+  <% if foto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(foto.errors.count, "error") %> prohibited this foto from being saved:</h2>
+
+      <ul>
+      <% foto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :foto_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :src %>
+	 <%= form.file_field :src %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

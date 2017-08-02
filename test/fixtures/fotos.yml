@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyString
+  src: http://res.cloudinary.com/proarq/image/upload/v1500492861/sample.jpg
+  public_id: w6jeslehuurlk2mdmpvz.jpg
+  proyecto: one
+
+two:
+  descripcion: MyString
+  src: http://res.cloudinary.com/proarq/image/upload/v1500492861/sample.jpg
+  public_id: w6jeslehuurlk2mdmpvz.jpg
+  proyecto: two

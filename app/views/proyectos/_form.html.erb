@@ -1,4 +1,4 @@
-<%= form_with(model: proyecto, local: true) do |form| %>
+<%= form_with(model: proyecto, local: true, :html => {:multipart => true}) do |form| %>
   <% if proyecto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(proyecto.errors.count, "error") %> prohibited this proyecto from being saved:</h2>
@@ -35,6 +35,13 @@
     <%= form.label :fecha %>
     <%= form.date_select :fecha, id: :proyecto_fecha %>
   </div>
+
+	<% if @proyecto.portada.blank?%>
+	  <div class="field">
+		<%= form.label :portada %>
+		<%= form.file_field :portada %>
+	  </div>
+	 <% end %>
 
   <div class="actions">
     <%= form.submit %>

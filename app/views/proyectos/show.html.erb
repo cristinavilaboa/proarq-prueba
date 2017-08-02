@@ -1,29 +1,67 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @proyecto.titulo %>
-</p>
+	<!-- Portfolio Item Heading -->
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">
+				<%= @proyecto.titulo%>
+			</h1>
+		</div>
+	</div>
+	<!-- /.row -->
 
-<p>
-  <strong>Tramite:</strong>
-  <%= @proyecto.tramite %>
-</p>
+	<!-- Portfolio Item Row -->
+	<div class="row">
 
-<p>
-  <strong>Ubicacion:</strong>
-  <%= @proyecto.ubicacion %>
-</p>
+		<div class="col-md-8">
+			<img class="img-responsive" src=<%= @proyecto.portada%> alt="">
+		</div>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @proyecto.descripcion %>
-</p>
+		<div class="col-md-4">
+			<h3>Descripcion</h3>
+			<p><%= @proyecto.descripcion %></p>
+			<h3>Detalles</h3>
+			<ul>
+				<li>Trámite: <%= @proyecto.tramite %></li>
+				<li>Ubicación: <%= @proyecto.ubicacion %></li>
+				<li>Fecha: <%= @proyecto.fecha %></li>
+			</ul>
+		</div>
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @proyecto.fecha %>
-</p>
-
-<%= link_to 'Edit', edit_proyecto_path(@proyecto) %> |
-<%= link_to 'Back', proyectos_path %>
+	</div>
+	<!-- /.row -->
+	
+	<hr>
+	
+	<!-- Project images Row -->
+	<% @fotos.each_with_index do |foto, index| %>
+		<% if index % 4 == 0 %>
+			<!-- Projects Row -->
+			<div class="row">
+		<% end %>
+		<div class="col-sm-3 col-xs-6">
+			<div class="container-image-overlay">
+				<img class="img-responsive portfolio-item" src=<%=foto.src%> alt="">
+				<div class="overlay">
+					<div class="text-overlay"><%=foto.descripcion%></div>
+				</div>
+			</div>
+			<% if user_signed_in? %>
+				<%= link_to 'Destroy', proyecto_foto_path(@proyecto.id, foto.id), method: :delete %>
+			<% end %>
+		</div>
+		<% if index % 4 == 0 %>
+			</div>
+			<hr>
+			<!-- /.row -->
+		<% end %>
+	<% end %>
+	<% if user_signed_in? %>
+		<%= link_to new_proyecto_foto_path(@proyecto) do %>
+			<p>Agregar nueva imagen...</p>
+		<% end %>
+		<%= link_to 'Editar proyecto', edit_proyecto_path(@proyecto) %> |
+		<%= link_to 'Volver', proyectos_path %>
+	<% end %>
+</div>

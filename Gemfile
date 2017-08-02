@@ -34,6 +34,9 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'bcrypt', platforms: :ruby
+gem 'cloudinary'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
