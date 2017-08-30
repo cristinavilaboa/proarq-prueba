@@ -81,8 +81,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+#username: proarq
+#password: <%= ENV['PROARQ_DATABASE_PASSWORD'] %>
 production:
   <<: *default
   database: proarq_production
   username: webadmin
-  password: <%= ENV['PROARQ_DATABASE_PASSWORD'] %>
+  password: MIFcib87473
