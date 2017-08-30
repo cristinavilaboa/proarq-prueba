@@ -85,6 +85,7 @@ test:
 #password: <%= ENV['PROARQ_DATABASE_PASSWORD'] %>
 production:
   <<: *default
-  database: proarq_production
-  username: webadmin
-  password: MIFcib87473
+  #database: proarq_production
+  #username: webadmin
+  #password: MIFcib87473
+  url: postgres://webadmin:MIFcib87473@postgres129007-ruby-postgres.pb-us.jelastic.com/proarq_production
