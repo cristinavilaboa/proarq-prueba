@@ -14,16 +14,17 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-host: postgres129007-ruby-postgres.pb-us.jelastic.com
+
 default: &default
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: postgres129007-ruby-postgres.pb-us.jelastic.com
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   
-  username: postgres
-  password: pRyg1o!a
+  username: webadmin
+  password: MIFcib87473
 
 development:
   <<: *default
