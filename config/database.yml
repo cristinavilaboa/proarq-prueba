@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: proarq_production
-  username: proarq
+  username: webadmin
   password: <%= ENV['PROARQ_DATABASE_PASSWORD'] %>
